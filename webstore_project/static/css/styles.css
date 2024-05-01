@@ -1,0 +1,66 @@
+/* Set the background of the entire page to white */
+body {
+    background-color: #ffffff;
+    color: #333333;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Style for main headers */
+h1, h2, h3 {
+    color: #D81B60; /* This is a vibrant shade of pink */
+}
+
+/* Subtle pink for less prominent headers */
+h4, h5, h6 {
+    color: #EC407A; /* Lighter pink */
+}
+
+/* General link styling */
+a {
+    color: #AD1457; /* Dark pink, good for contrast */
+    text-decoration: none; /* No underlines on links */
+}
+
+a:hover {
+    color: #C2185B; /* A slightly brighter pink when hovering over links */
+    text-decoration: underline; /* Underline on hover for better user interaction */
+}
+
+/* Button styling */
+button {
+    background-color: #E91E63; /* Bright pink */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #C2185B; /* Darker shade of pink on hover */
+}
+
+/* Input styles for forms */
+input, textarea {
+    border: 2px solid #F8BBD0; /* Light pink border */
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    width: 95%;
+}
+
+/* Placeholder text style */
+::placeholder {
+    color: #F8BBD0; /* Light pink */
+    opacity: 1; /* Make placeholder fully visible */
+}
+
+.card-footer {
+    background-color: #f8b4d9; /* A light pink background */
+    border: 2px solid #ff69b4; /* A brighter pink border */
+    padding: 10px; /* Adds some padding inside the border */
+    border-radius: 5px; /* Optional: Rounds the corners of the border */
+}
