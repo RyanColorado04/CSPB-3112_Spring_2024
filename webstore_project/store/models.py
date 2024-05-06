@@ -13,7 +13,9 @@ class Category(models.Model):
         ordering = ('name',)  # This meta option specifies the default ordering of query results to sort by name alphabetically.
         verbose_name = 'category'  # Human-readable single name for Category objects, used in the Django admin.
         verbose_name_plural = 'categories'  # Human-readable plural name for Category objects.
-
+    
+    def get_category(self):
+        return reverse('products_by_category', args=[self.slug])
 
     def __str__(self):
         return self.name  # Returns the string representation of the model, which is the category name
@@ -36,6 +38,9 @@ class Product(models.Model):
         ordering = ('name',)  # Orders Product objects by name alphabetically.
         verbose_name = 'product'  # Singular name for Product in the admin interface.
         verbose_name_plural = 'products'  # Plural name for Product in the admin interface.
+
+    def get_url(self):
+        return reverse('product_detail', args=[self.category.slug, self.slug])
 
     def __str__(self):
         return self.name  # String representation of the Product, typically used in the Django admin and in debug messages.

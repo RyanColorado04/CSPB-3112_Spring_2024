@@ -10,14 +10,13 @@
           <!-- Dropdown Menu -->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle text-light text-uppercase" href="#" id="categoriesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Categories
+              Product Categories
             </a>
             <ul class="dropdown-menu" aria-labelledby="categoriesDropdown">
-              <li><a class="dropdown-item" href="#">Category 1</a></li>
-              <li><a class="dropdown-item" href="#">Category 2</a></li>
-              <li><a class="dropdown-item" href="#">Category 3</a></li>
-              <li><a class="dropdown-item" href="#">Category 4</a></li>
-              <li><a class="dropdown-item" href="#">Category 5</a></li>
+              <li><a class="dropdown-item" href="{% url 'products' %}">Clear Tags</a></li>
+              {% for c in links %}
+              <li><a class="dropdown-item" href="{{ c.get_category }}">{{ c.name }}</a></li>
+              {% endfor %}
             </ul>
           </li>
 
@@ -29,7 +28,7 @@
             <a class="nav-link text-light text-uppercase font-weight-bold" href="{% url 'about' %}">About Page</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-light text-uppercase font-weight-bold" href="">Dummy Page Holder</a>
+            <a class="nav-link text-light text-uppercase font-weight-bold" href="">Search Products</a>
           </li>
         </ul>
 

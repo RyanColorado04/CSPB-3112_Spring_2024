@@ -1,9 +1,18 @@
 {% extends 'base.html' %}
-
+{% load static %}
 {% block title %}
-About Page
+Product
 {% endblock %}
 
 {% block content %}
-Dummy page for product information - will fix soon
-{% endblock %} 
+<img src="{{product.image.url}}" alt="">
+<p>{{product.name}}</p>
+<p>{{product.price}}</p>
+<p>Product Description</p>
+<p>{{product.description}}</p>
+{% if product.stock <= 0 %}
+<p>Out of Stock</p>
+{% else %}
+Add to Cart
+{% endif %}
+{% endblock %}

@@ -18,5 +18,13 @@ def products(request, tag=None):
         products = Product.objects.filter(available=True)
     return render(request, 'products.html', {'category': category_page, 'products': products})
 
-def product(request):
-    return render(request, 'product.html')
+#def product(request):
+#    return render(request, 'product.html')
+
+def product(request, category_tag, product_tag):
+    try:
+        product = Product.objects.get(category__slug=category_tag, slug=product_tag)
+    except Exception as e:
+        raise e # change to 404
+
+    return render(request, 'product.html', {'product': product})
