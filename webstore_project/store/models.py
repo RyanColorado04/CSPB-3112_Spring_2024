@@ -9,6 +9,12 @@ class Category(models.Model):
     description = models.TextField(blank=True)  # Text field for category descriptions that allows empty values
     image = models.ImageField(upload_to='category', blank=True)  # Image field where uploaded images will be stored in the 'category' directory and can be left blank
 
+    class Meta:
+        ordering = ('name',)  # This meta option specifies the default ordering of query results to sort by name alphabetically.
+        verbose_name = 'category'  # Human-readable single name for Category objects, used in the Django admin.
+        verbose_name_plural = 'categories'  # Human-readable plural name for Category objects.
+
+
     def __str__(self):
         return self.name  # Returns the string representation of the model, which is the category name
 
@@ -26,5 +32,10 @@ class Product(models.Model):
     created = models.DateTimeField(auto_now_add=True)  # A datetime field that records when the product instance was created. Automatically set when object is first created.
     updated = models.DateTimeField(auto_now=True)  # A datetime field that records the last time the product instance was updated. Automatically updated every time the object is saved.
     
+    class Meta:
+        ordering = ('name',)  # Orders Product objects by name alphabetically.
+        verbose_name = 'product'  # Singular name for Product in the admin interface.
+        verbose_name_plural = 'products'  # Plural name for Product in the admin interface.
+
     def __str__(self):
         return self.name  # String representation of the Product, typically used in the Django admin and in debug messages.
